@@ -1,7 +1,7 @@
 # configured aws provider with proper credentials
 provider "aws" {
-  region     = "us-east-1"
-  profile    = "yusuf"
+  region     = "us-east-2"
+  profile    = "martins"
 }
 
 
@@ -21,7 +21,7 @@ resource "aws_vpc" "prodvpc" {
 resource "aws_subnet" "prodsubnet1" {
   vpc_id            = aws_vpc.prodvpc.id
   cidr_block        = "10.0.1.0/24"
-  availability_zone = "us-east-1a"
+  availability_zone = "us-east-2a"
   map_public_ip_on_launch = true
   
   tags = {
@@ -166,7 +166,7 @@ data "aws_ami" "ubuntu" {
     values = ["hvm"]
   }
 
-  owners = ["099720109477"]
+  owners = ["5887-3861-0707"]
 }
 
 # print the url of the jenkins server
